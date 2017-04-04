@@ -9,15 +9,13 @@ import java.util.Stack;
 public class Calculator {
 
 	public int calculate(String exp) {
-		int result = 0;
-		result = RPN(InfixToPostfix(exp));
 
-		return result;
+		return RPN(InfixToPostfix(exp));
 	}
 
 	private String InfixToPostfix(String exp) {
-		Stack<Character> stack = new Stack<Character>();
-		ArrayList<String> postfix = new ArrayList<String>();
+		Stack<Character> stack = new Stack<>();
+		ArrayList<String> postfix = new ArrayList<>();
 		StringBuffer stringBuffer = new StringBuffer();
 		
 		for (int i = 0; i < exp.length(); i++) {
@@ -51,7 +49,7 @@ public class Calculator {
 			}
 			/* 피연산자일 때 */
 			else {
-				postfix.add(exp.charAt(i) + ""); // 후위식 배열에 넣어줌
+				postfix.add(exp.charAt(i).toString()); // 후위식 배열에 넣어줌
 			}
 			/* eos일 때 */
 			if (i == exp.length() - 1) {
@@ -67,17 +65,15 @@ public class Calculator {
 	}
 
 	private int RPN(String postfix) {
-		Stack<String> cal = new Stack<String>();
+		Stack<String> cal = new Stack<>();
 
 		for (int i = 0; i < postfix.length(); i++) {
 			char input = postfix.charAt(i);
 
-//			if (input == '\0')
-//				break;
 
 			if (isAnOperator(input)) {
-				int y = Integer.parseInt(cal.pop().toString());
-				int x = Integer.parseInt(cal.pop().toString());
+				int y = Integer.parseInt(cal.pop());
+				int x = Integer.parseInt(cal.pop());
 				int z = evaluate(x, y, input);
 				cal.push(z+"");
 			} else
@@ -87,7 +83,7 @@ public class Calculator {
 	}
 
 	private int evaluate(int x, int y, char op) {
-		int z = 0;
+		int z;
 
 		if (op == '+')
 			z = x + y;
@@ -110,6 +106,6 @@ public class Calculator {
 	}
 
 	private boolean isAnOperator(char c) {
-		return ("+-/*".indexOf(c) >= 0);
+		return "+-/*".indexOf(c) >= 0;
 	}
 }
