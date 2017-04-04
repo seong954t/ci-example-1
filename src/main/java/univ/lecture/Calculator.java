@@ -10,10 +10,10 @@ public class Calculator {
 
 	public int calculate(String exp) {
 
-		return RPN(InfixToPostfix(exp));
+		return calRPN(infixToPostfix(exp));
 	}
 
-	private String InfixToPostfix(String exp) {
+	private String infixToPostfix(String exp) {
 		Stack<Character> stack = new Stack<>();
 		ArrayList<String> postfix = new ArrayList<>();
 		StringBuffer stringBuffer = new StringBuffer();
@@ -49,7 +49,7 @@ public class Calculator {
 			}
 			/* 피연산자일 때 */
 			else {
-				postfix.add(exp.charAt(i).toString()); // 후위식 배열에 넣어줌
+				postfix.add(exp.charAt(i)+""); // 후위식 배열에 넣어줌
 			}
 			/* eos일 때 */
 			if (i == exp.length() - 1) {
@@ -64,7 +64,7 @@ public class Calculator {
 		return stringBuffer.toString();
 	}
 
-	private int RPN(String postfix) {
+	private int calRPN(String postfix) {
 		Stack<String> cal = new Stack<>();
 
 		for (int i = 0; i < postfix.length(); i++) {
