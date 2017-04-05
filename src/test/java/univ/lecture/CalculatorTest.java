@@ -39,7 +39,7 @@ public class CalculatorTest {
         output = calc.calculate("3+2*((5-2)+3)*2+3*3");
         assertThat(output, is(36));
         output = calc.calculate("3+2*((5-2)+3)*2*2");
-        assertThat(output, is(54));
+        assertThat(output, is(51));
         output = calc.calculate("3+2*((5-2)+3)*2/9");
         assertThat(output, is(3));
         
