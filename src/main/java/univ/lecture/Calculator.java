@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class Calculator {
 
 	public int calculate(String exp) {
-	      int data = 0;
+	      int data;
 	      if (exp.contains(")")) {
 	         int q = 0;
 	         Stack stack = new Stack<>();
