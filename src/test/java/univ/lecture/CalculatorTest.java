@@ -148,4 +148,31 @@ public class CalculatorTest {
 	      int output = calc.calculate("(12*(6-3))+4*3");
 	      assertThat(output, is(48));
 	   }
+   @Test
+    public void testCalculator17() {
+       Calculator calc = new Calculator();
+       int output = calc.calculate("(5+3)/2+(5+3)");
+       assertThat(output, is(12));
+    }
+
+    @Test
+    public void testCalculatorAdd18() {
+       Calculator calc = new Calculator();
+       int output = calc.calculate("(5+3)*2+(5+3)");
+       assertThat(output, is(24));
+    }
+    
+    @Test
+    public void testCalculatorAdd19() {
+       Calculator calc = new Calculator();
+       int output = calc.calculate("8*2-(5+3)/2");
+       assertThat(output, is(12));
+    }
+    
+    @Test
+    public void testCalculatorAdd20() {
+       Calculator calc = new Calculator();
+       int output = calc.calculate("3+(5-1)*4");
+       assertThat(output, is(19));
+    }
 }
