@@ -184,4 +184,18 @@ public class CalculatorTest {
 		int output = calc.calculate("7-(6+3)/2+1");
 		assertThat(output, is(4));
 	}
+
+	@Test
+	public void testCalculator22() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("8+1*2*(3+(7-1))");
+		assertThat(output, is(26));
+	}
+
+	@Test
+	public void testCalculator23() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("(4-2)+8/2");
+		assertThat(output, is(6));
+	}
 }
