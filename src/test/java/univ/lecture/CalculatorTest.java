@@ -19,7 +19,8 @@ public class CalculatorTest {
 		assertThat(output, is(15));
 		output = calc.calculate("3+(5-1)*4");
 		assertThat(output, is(19));
-
+		output = calc.calculate("(12*(6-3))+4*3");
+		assertThat(output, is(48));
 	}
 
 	@Test
@@ -31,6 +32,8 @@ public class CalculatorTest {
 		assertThat(output, is(27));
 		output = calc.calculate("7-(6+3)/2+1");
 		assertThat(output, is(4));
+		output = calc.calculate("(5+3)/2+(5+3)");
+		assertThat(output, is(12));
 	}
 
 	@Test
@@ -42,6 +45,8 @@ public class CalculatorTest {
 		assertThat(output, is(60));
 		output = calc.calculate("8+1*2*(3+(7-1))");
 		assertThat(output, is(26));
+		output = calc.calculate("(5+3)*2+(5+3)");
+		assertThat(output, is(24));
 	}
 
 	@Test
@@ -53,6 +58,7 @@ public class CalculatorTest {
 		assertThat(output, is(16));
 		output = calc.calculate("(4-2)+8/2");
 		assertThat(output, is(6));
-
+		output = calc.calculate("8*2-(5+3)/2");
+		assertThat(output, is(12));
 	}
 }
