@@ -13,7 +13,7 @@ public class Calculator {
 			int q = 0;
 			Stack stack = new Stack<>();
 			while (exp.length() != q) {
-				String calcul = "";
+				StringBuilder calcul = new StringBuilder();
 				char cal;
 				while (exp.length() != q) {
 					if((cal = exp.charAt(q++)) == ')'){
@@ -26,9 +26,9 @@ public class Calculator {
 						stack.pop();
 						break;
 					}
-					calcul = (char) stack.pop() + calcul;
+					calcul.insert(0, (char) stack.pop());
 				}
-				String v = Integer.toString(calculate(calcul));
+				String v = Integer.toString(calculate(calcul.toString()));
 				int i = 0;
 				while(v.length() != i){
 					stack.push(v.charAt(i++));
