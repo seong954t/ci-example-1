@@ -40,8 +40,15 @@ public class CalculatorTest {
         assertThat(output, is(36));
         output = calc.calculate("3+2*((5-2)+3)*2*2");
         assertThat(output, is(51));
-        output = calc.calculate("3+2*((5-2)+3)*2/9");
-        assertThat(output, is(3));
-        
+        output = calc.calculate("3+2*((5-2)+3)*2/9+4");
+        assertThat(output, is(7));
+        output = calc.calculate("2*((5-2)+3)*2/9+6");
+        assertThat(output, is(6));
+        output = calc.calculate("(5+3)/2+(5+3)*2");
+        assertThat(output, is(20));
+        output = calc.calculate("(5+3)/2+(5+3)");
+        assertThat(output, is(12));
+        output = calc.calculate("(5+3)*2+(5+3)");
+        assertThat(output, is(24));
     }
 }
