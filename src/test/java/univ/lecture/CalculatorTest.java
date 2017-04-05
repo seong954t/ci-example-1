@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.is;
  * Created by tchi on 2017. 3. 19..
  */
 public class CalculatorTest {
+
 		@Test
 	   public void testCalculatorAdd() {
 	      Calculator calc = new Calculator();
@@ -148,7 +149,8 @@ public class CalculatorTest {
 	      int output = calc.calculate("(12*(6-3))+4*3");
 	      assertThat(output, is(48));
 	   }
-   @Test
+  
+    @Test
     public void testCalculator17() {
        Calculator calc = new Calculator();
        int output = calc.calculate("(5+3)/2+(5+3)");
@@ -156,23 +158,46 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testCalculatorAdd18() {
+    public void testCalculator18() {
        Calculator calc = new Calculator();
        int output = calc.calculate("(5+3)*2+(5+3)");
        assertThat(output, is(24));
     }
     
     @Test
-    public void testCalculatorAdd19() {
+    public void testCalculator19() {
        Calculator calc = new Calculator();
        int output = calc.calculate("8*2-(5+3)/2");
        assertThat(output, is(12));
     }
     
     @Test
-    public void testCalculatorAdd20() {
+    public void testCalculator20() {
        Calculator calc = new Calculator();
        int output = calc.calculate("3+(5-1)*4");
        assertThat(output, is(19));
     }
+  
+    @Test
+    public void testCalculator21() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("7-(6+3)/2+1");
+	      assertThat(output, is(4));
+	   }
+	   
+	   @Test
+	   public void testCalculator22() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("8+1*2*(3+(7-1))");
+	      assertThat(output, is(26));
+	   }
+	   
+	   @Test
+	   public void testCalculator23() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("(4-2)+8/2");
+	      assertThat(output, is(6));
+	   }
+    
+  
 }
