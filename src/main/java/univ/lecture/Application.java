@@ -20,7 +20,6 @@ public class Application {
     public Calculator calculator(String[] args) {
         Calculator calc = new Calculator();
         String exp = args[0];
-        exp = "3+2*((5-2)+3)*2";
         int result = calc.calculate(exp);
         System.out.println(String.format("%s = %d", exp, result));
 
