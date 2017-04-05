@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
  */
 public class Calculator {
 	public int calculate(String exp) {
-		int data = 0;
+		int data;
 		if (exp.contains(")")) {
 			int q = 0;
 			Stack stack = new Stack<>();
@@ -34,10 +34,11 @@ public class Calculator {
 					stack.push(v.charAt(i++));
 				}
 			}
-			exp = "";
+			String exp_data = "";
 			while (!stack.empty()) {
-				exp = stack.pop()+exp;
+				exp_data = stack.pop()+exp_data;
 			}
+			exp = exp_data;
 		}
 		if (exp.contains("+")) {
 			StringTokenizer st = new StringTokenizer(exp, "+");
@@ -54,7 +55,7 @@ public class Calculator {
 			int cal;
 			if (set == '*' || set == '/') {
 				cal = calculate(st.nextToken());
-				val += cal;
+				val += Integer.toString(cal);
 				cal = -calculate(val);
 			} else {
 				cal = calculate(val);
