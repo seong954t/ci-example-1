@@ -34,11 +34,11 @@ public class Calculator {
 					stack.push(v.charAt(i++));
 				}
 			}
-			String exp_data = "";
+			String expdata = "";
 			while (!stack.empty()) {
-				exp_data = stack.pop()+exp_data;
+				expdata = stack.pop()+expdata;
 			}
-			exp = exp_data;
+			exp = expdata;
 		}
 		if (exp.contains("+")) {
 			StringTokenizer st = new StringTokenizer(exp, "+");
