@@ -9,136 +9,143 @@ import static org.hamcrest.Matchers.is;
  * Created by tchi on 2017. 3. 19..
  */
 public class CalculatorTest {
-	@Test
+		@Test
 	   public void testCalculatorAdd() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("1+1");
 	      assertThat(output, is(2));
 	   }
-
+	   
 	   @Test
-	   public void testCalculatorAdd1() {
-	      Calculator calc = new Calculator();
-	      int output = calc.calculate("1+2");
-	      assertThat(output, is(3));
-	   }
-
-	   @Test
-	   public void testCalculatorAdd2() {
-	      Calculator calc = new Calculator();
-	      int output = calc.calculate("3+2*(5-2)+3*2");
-	      assertThat(output, is(15));
-	   }
-
-	   @Test
-	   public void testCalculatorAdd3() {
-	      Calculator calc = new Calculator();
-	      int output = calc.calculate("3+2*((5-2)+3)*2");
-	      assertThat(output, is(27));
-	   }
-
-	   @Test
-	   public void testCalculatorAdd4() {
-	      Calculator calc = new Calculator();
-	      int output = calc.calculate("(3+2)*((5-2)+3)*2");
-	      assertThat(output, is(60));
-	   }
-
-	   @Test
-	   public void testCalculatorAdd5() {
+	   public void testCalculatorSub() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("3-4");
 	      assertThat(output, is(-1));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd6() {
+	   public void testCalculatorMul() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("5*6");
 	      assertThat(output, is(30));
 	   }
+	   
+	   @Test
+	   public void testCalculatorDiv() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("6/2");
+	      assertThat(output, is(3));
+	   }
 
 	   @Test
-	   public void testCalculatorAdd7() {
+	   public void testCalculator() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("3+2*(5-2)+3*2");
+	      assertThat(output, is(15));
+	   }
+
+	   @Test
+	   public void testCalculator2() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("3+2*((5-2)+3)*2");
+	      assertThat(output, is(27));
+	   }
+
+	   @Test
+	   public void testCalculator3() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("(3+2)*((5-2)+3)*2");
+	      assertThat(output, is(60));
+	   }
+
+	   @Test
+	   public void testCalculator4() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(5+3)*2");
 	      assertThat(output, is(16));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd8() {
+	   public void testCalculator5() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(5+3)/2");
 	      assertThat(output, is(4));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd9() {
+	   public void testCalculator6() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(3+2)*((5-2)+3)*2+3+2*((5-2)+3)*2");
 	      assertThat(output, is(87));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd10() {
+	   public void testCalculator7() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(3+2)*((5-2)+3)*2+3");
 	      assertThat(output, is(63));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd11() {
+	   public void testCalculator8() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(3+2)*((5-2)+3)*2+3*3");
 	      assertThat(output, is(69));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd12() {
+	   public void testCalculator9() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("3+2*((5-2)+3)*2+3*3");
 	      assertThat(output, is(36));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd13() {
+	   public void testCalculator10() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("3+2*((5-2)+3)*2*2");
 	      assertThat(output, is(51));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd14() {
+	   public void testCalculator11() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("3+2*((5-2)+3)*2/9+4");
 	      assertThat(output, is(7));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd15() {
+	   public void testCalculator12() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("2*((5-2)+3)*2/9+6");
 	      assertThat(output, is(6));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd16() {
+	   public void testCalculator13() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(5+3)/2+(5+3)*2");
 	      assertThat(output, is(20));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd17() {
+	   public void testCalculator14() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(5+3)/2+(5+3)");
 	      assertThat(output, is(12));
 	   }
 
 	   @Test
-	   public void testCalculatorAdd18() {
+	   public void testCalculator15() {
 	      Calculator calc = new Calculator();
 	      int output = calc.calculate("(5+3)*2+(5+3)");
 	      assertThat(output, is(24));
+	   }
+	   
+	   @Test
+	   public void testCalculator16() {
+	      Calculator calc = new Calculator();
+	      int output = calc.calculate("(12*(6-3))+4*3");
+	      assertThat(output, is(48));
 	   }
 }
