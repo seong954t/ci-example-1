@@ -15,25 +15,25 @@ public class CalculatorTest {
         int output = calc.calculate("1+1");
         assertThat(output, is(2));
     }
-    
+    @Test
     public void testCalculatorSub () {
         Calculator calc = new Calculator();
         int output = calc.calculate("8-5");
         assertThat(output, is(3));
     }
-    
+    @Test
     public void testCalculatorMul () {
         Calculator calc = new Calculator();
         int output = calc.calculate("8*3");
         assertThat(output, is(24));
     }
-    
+    @Test
     public void testCalculatorDiv () {
         Calculator calc = new Calculator();
         int output = calc.calculate("8/4");
         assertThat(output, is(2));
     }
-    
+    @Test
     public void testCalculator () {
     	Calculator calc = new Calculator();
         int output = calc.calculate("(12*3)+2*(3-7)*3");
