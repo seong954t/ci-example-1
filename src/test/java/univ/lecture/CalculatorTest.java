@@ -38,4 +38,31 @@ public class CalculatorTest {
 		assertThat(output, is(3));
 	}
 
+	@Test
+	public void testCalculator() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("3+2*(5-2)+3*2");
+		assertThat(output, is(15));
+	}
+
+	@Test
+	public void testCalculator2() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("3+2*((5-2)+3)*2");
+		assertThat(output, is(27));
+	}
+
+	@Test
+	public void testCalculator3() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("(3+2)*((5-2)+3)*2");
+		assertThat(output, is(60));
+	}
+
+	@Test
+	public void testCalculator4() {
+		Calculator calc = new Calculator();
+		int output = calc.calculate("(5+3)*2");
+		assertThat(output, is(16));
+	}
 }

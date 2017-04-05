@@ -25,7 +25,6 @@ public class Application {
 
         return calc;
     }
-
 	public static void main(String[] args) throws Exception {
         new Application().calculator(args);
 	}

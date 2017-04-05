@@ -63,7 +63,6 @@ public class Calculator {
 					cal = -cal;
 				}
 			}
-
 			while (st.hasMoreTokens()) {
 				String name = st.nextToken();
 				cal -= calculate(name);
